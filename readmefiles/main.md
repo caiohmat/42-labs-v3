@@ -2,7 +2,7 @@
 
 ### _Desafio : Aplicação de monitoramento de serviços web.
 
-<h1><\h1>
+<h1></h1>
 
 A função `main` chama as demais funções desse projeto com base nos argumentos enviado pelo usuário e inicializa variáveis necessarias
 
@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 }
 ```
 
-<h1><\h1>
+<h1></h1>
 
 A função simplify_log lê o arquivo monitoring.log e imprime seu conteudo de forma simplificada no terminal.
 

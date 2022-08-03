@@ -6,7 +6,7 @@
 /*   By: chideyuk <chideyuk@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 21:30:57 by chideyuk          #+#    #+#             */
-/*   Updated: 2022/08/03 01:30:49 by chideyuk         ###   ########.fr       */
+/*   Updated: 2022/08/03 03:34:57 by chideyuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,8 @@ int	get_data(t_config *config)
 			if (data_result == -1)
 			{
 				printf("Error: Could not get data\n");
+				free(buffer);
+				ft_freeptr(split);
 				close(fd);
 				return (1);
 			}

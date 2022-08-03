@@ -52,6 +52,8 @@ int	get_data(t_config *config)
 			if (data_result == -1)
 			{
 				printf("Error: Could not get data\n");
+				free(buffer);
+				ft_freeptr(split);
 				close(fd);
 				return (1);
 			}

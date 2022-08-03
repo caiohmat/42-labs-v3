@@ -6,7 +6,7 @@
 /*   By: chideyuk <chideyuk@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 20:21:46 by chideyuk          #+#    #+#             */
-/*   Updated: 2022/08/02 22:22:34 by chideyuk         ###   ########.fr       */
+/*   Updated: 2022/08/03 02:07:35 by chideyuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	run_PING_test(t_config *config, FILE *temp_log, int log_file)
 			if (strstr(buffer, "Connected"))
 			{
 				printf("SUCCESS: %s", buffer + 2);
-				dprintf(log_file, "SUCESS: %s\n", buffer + 2);
+				dprintf(log_file, "SUCCESS: %s\n", buffer + 2);
 				break ;
 			}
 		}

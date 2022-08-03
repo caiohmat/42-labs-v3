@@ -6,7 +6,7 @@
 /*   By: chideyuk <chideyuk@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 22:14:33 by chideyuk          #+#    #+#             */
-/*   Updated: 2022/07/31 23:22:47 by chideyuk         ###   ########.fr       */
+/*   Updated: 2022/08/03 01:29:24 by chideyuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int	curl_setup(t_config *config, FILE *temp_log)
 		else
 		{
 			printf("Error: Could not initiate curl for: %s\n", temp->name);
-			curl_global_cleanup();
 			return (1);
 		}
 		temp = temp->next;

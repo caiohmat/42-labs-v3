@@ -1,6 +1,6 @@
-<h1>42 Labs 3º Edição<\h1>
+<h1>42 Labs 3º Edição</h1>
 
-### _Desafio : Aplicação de monitoramento de serviços web.
+### Desafio : Aplicação de monitoramento de serviços web.
 
 <h1></h1>
 
@@ -25,7 +25,10 @@ int	main(int argc, char **argv)
 		config = malloc(sizeof(*config));
 		
 		//log_file será utilizado para armazenar informações no arquivo monitoring.log.
-		log_file = open("monitoring.log", O_APPEND | O_WRONLY | S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+		if (access("monitoring.log", F_OK) == 0)
+			log_file = open("monitoring.log", O_APPEND | O_WRONLY | S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+		else
+			log_file = open("monitoring.log", O_CREAT | O_WRONLY | S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 
 		//temp_log será utilizado para armazenar temporariamente informações no arquivo temp_log.txt, que será utilizado para
 		//imprimir as informações relevantes no arquivo monitoring.log e no terminal.

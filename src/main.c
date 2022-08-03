@@ -6,7 +6,7 @@
 /*   By: chideyuk <chideyuk@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 20:48:19 by chideyuk          #+#    #+#             */
-/*   Updated: 2022/08/02 23:48:29 by chideyuk         ###   ########.fr       */
+/*   Updated: 2022/08/03 02:03:30 by chideyuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,10 @@ int	main(int argc, char **argv)
 	else if (argc == 1)
 	{
 		config = malloc(sizeof(*config));
-		log_file = open("monitoring.log", O_APPEND | O_WRONLY | S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+		if (access("monitoring.log", F_OK) == 0)
+			log_file = open("monitoring.log", O_APPEND | O_WRONLY | S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+		else
+			log_file = open("monitoring.log", O_CREAT | O_WRONLY | S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 		temp_log = fopen("temp_log.txt", "w");
 		config_init(config);
 		if (get_data(config) || curl_setup(config, temp_log))

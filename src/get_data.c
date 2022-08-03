@@ -6,7 +6,7 @@
 /*   By: chideyuk <chideyuk@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 21:30:57 by chideyuk          #+#    #+#             */
-/*   Updated: 2022/08/02 21:41:48 by chideyuk         ###   ########.fr       */
+/*   Updated: 2022/08/03 01:30:49 by chideyuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,21 +130,18 @@ int	get_data(t_config *config)
 		{
 			split = ft_split(buffer, '\t');
 			data_result = check_data(split);
-			fill_data(temp, split);
-			free(buffer);
-			ft_freeptr(split);
 			if (data_result == -1)
 			{
 				printf("Error: Could not get data\n");
 				close(fd);
 				return (1);
 			}
-			else if (data_result == 1)
-			{
-				temp->next = malloc(sizeof(*config));
-				config_init(temp->next);
-				temp = temp->next;
-			}
+			fill_data(temp, split);
+			free(buffer);
+			ft_freeptr(split);
+			temp->next = malloc(sizeof(*config));
+			config_init(temp->next);
+			temp = temp->next;
 		}
 		else
 			free(buffer);

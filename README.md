@@ -49,3 +49,9 @@ Também é possivel ler as informações no arquivo `monitoring.log` de maneira 
 O programa foi feito utilizando funções da libcurl para realizar os testes de rede necessários.
 
 Código explicado:
+	[main.c](https://github.com/caiohmat/42-labs-v3/blob/main/readmefiles/main.md)
+	[get_data.c](https://github.com/caiohmat/42-labs-v3/blob/main/readmefiles/get_data.md)
+	[curl_setup.c](https://github.com/caiohmat/42-labs-v3/blob/main/readmefiles/curl_setup.md)
+	[monitoring_loop.c](https://github.com/caiohmat/42-labs-v3/blob/main/readmefiles/monitoring_loop.md)
+
+[Arquivos do projeto](https://github.com/caiohmat/42-labs-v3)
